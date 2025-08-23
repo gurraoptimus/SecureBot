@@ -1,24 +1,25 @@
-/**
- * Chrome Search Bot - popup.js
- * This script allows users to enter a query and opens a new tab with Google search results.
- */
-
-// Wait for the DOM to load
+// popup.js
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('search-form');
     const input = document.getElementById('search-input');
+    const button = document.getElementById('search-btn');
+
+    function doSearch() {
+        const query = encodeURIComponent(input.value.trim());
+        if (query) {
+            const url = `https://www.google.com/search?q=${query}`;
+            chrome.tabs.create({ url });
+        }
+    }
 
     if (form && input) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const query = encodeURIComponent(input.value.trim());
-            if (query) {
-                chrome.tabs.create({
-                    url: `https://www.google.com/search?q=${query}`
-                });
-            }
+            doSearch();
         });
-    } else {
-        console.error('search-form or search-input not found in popup.html');
+    }
+
+    if (button) {
+        button.addEventListener('click', doSearch);
     }
 });
