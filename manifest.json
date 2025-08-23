@@ -12,19 +12,19 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "128": "img/SecureBot.png"
+            "128": "SecureBot.png"
         }
     },
     "background": {
-        "service_worker": "src/background.js",
+        "service_worker": "background.js",
         "type": "module"
     },
     "icons": {
-        "128": "img/SecureBot.png"
+        "128": "SecureBot.png"
     },
     "web_accessible_resources": [
         {
-            "resources": ["src/popup.js"],
+            "resources": ["popup.js"],
             "matches": ["*://*/*"]
         }
     ]
