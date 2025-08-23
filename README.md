@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/securebot-logo.svg" alt="SecureBot Logo" width="120" />
+    <img src="https://raw.githubusercontent.com/gurraoptimus/SecureBot/refs/heads/gh-page/assets/securebot-logo.svg" alt="SecureBot Logo" width="120" />
 </p>
 <div align="center">
 
@@ -25,7 +25,7 @@ SecureBot is a Chrome extension that automates and enhances your Google search e
             <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
         </td>
         <td align="center" width="33%">
-            <a href="https://github.com/yourusername/SecureBot">
+            <a href="https://github.com/gurraoptimus/SecureBot">
                 <img src="https://img.shields.io/badge/GitHub-Repository-black?logo=github" alt="GitHub Repo" />
             </a>
         </td>
@@ -66,7 +66,7 @@ SecureBot is a Chrome extension that automates and enhances your Google search e
 
 ## 👤 Developed by
 
-- **Your Name or Team**
+- **Gurraoptimus**
 - [GitHub Repository](https://github.com/gurraoptimus/SecureBot)
 
 ---
