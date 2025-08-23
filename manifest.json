@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "SecureBot",
+    "version": "1.5",
+    "description": "SecureBot. A secure search bot for Browsers.",
+    "permissions": [
+        "tabs",
+        "search",
+        "activeTab",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "SecureBot.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "icons": {
+        "128": "SecureBot.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["popup.js"],
+            "matches": ["*://*/*"]
+        }
+    ]
+}
