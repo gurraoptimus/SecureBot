@@ -25,7 +25,7 @@ SecureBot is a Chrome extension that automates and enhances your Google search e
             <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
         </td>
         <td align="center" width="33%">
-            <a href="https://github.com/gurraoptimus/SecureBot/gh-page">
+            <a href="https://github.com/gurraoptimus/SecureBot/tree/gh-page/assets/securebot-logo.svg">
                 <img src="https://img.shields.io/badge/GitHub-Repository-black?logo=github" alt="GitHub Repo" />
             </a>
         </td>
@@ -67,7 +67,7 @@ SecureBot is a Chrome extension that automates and enhances your Google search e
 ## 👤 Developed by
 
 - **Gurraoptimus**
-- [GitHub Repository](https://github.com/gurraoptimus/SecureBot)
+- [GitHub Repository](https://github.com/gurraoptimus/SecureBot/tree/main/manifest.json)
 
 ---
 
