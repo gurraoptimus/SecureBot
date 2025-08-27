@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Gurraoptimus Development">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gurraoptimus/SecureBot/refs/heads/main/img/SecureBot_Logotype.png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/gurraoptimus/SecureBot/refs/heads/main/img/SecureBot_Logotype.png">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/gurraoptimus/SecureBot/refs/heads/gh-page/assets/SecureBot-Logo.svg">
+
+    <title>SecureBot - Chrome Extension</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+    <meta name="description" content="SecureBot Quick Search Chrome Extension Unavailable on the Chrome Web Store.">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            min-width: 320px;
+            min-height: 220px;
+            font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #232946 70%, #121629 100%);
+            box-sizing: border-box;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bg-move 8s ease-in-out infinite alternate;
+        }
+        @keyframes bg-move {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 36px 28px 28px 28px;
+            background: rgba(35,41,70,0.92);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(66,133,244,0.13);
+            animation: fade-in 1.2s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .bot-icon {
+            display: block;
+            margin: 0 auto 18px auto;
+            width: 80px;
+            height: 80px;
+            box-shadow: 0 4px 16px rgba(66,133,244,0.18);
+            border-radius: 50%;
+            background: #232946;
+            animation: icon-pop 1s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes icon-pop {
+            0% { transform: scale(0.7); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        h1 {
+            font-size: 2.2em;
+            margin: 0 0 18px 0;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 0.01em;
+            font-weight: 700;
+            animation: fade-in 1.4s cubic-bezier(.4,0,.2,1);
+        }
+        p {
+            margin: 0 0 18px 0;
+            text-align: center;
+            color: #e0e0e0;
+            font-size: 1.25em;
+            animation: fade-in 1.6s cubic-bezier(.4,0,.2,1);
+        }
+        .desc {
+            color: #e0e0e0;
+            margin-bottom: 24px;
+        }
+        .button-link {
+            text-align: center;
+            margin-top: 24px;
+        }
+        .button-link a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        button {
+            padding: 16px 38px;
+            font-size: 1.25em;
+            background: linear-gradient(90deg, #4285f4 80%, #6ea0f7 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(66,133,244,0.18);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+            pointer-events: auto;
+            animation: btn-pop 1.8s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes btn-pop {
+            0% { transform: scale(0.8); opacity: 0; }
+            70% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        button:hover,
+        button:focus {
+            background: #357ae8;
+            outline: none;
+            box-shadow: 0 4px 16px rgba(66,133,244,0.25);
+            transform: translateY(-3px) scale(1.06);
+        }
+
+        /* "Out of the box" floating effect for the .container */
+        .container {
+            box-shadow:
+                0 8px 32px rgba(66,133,244,0.13),
+                0 1.5px 12px 2px rgba(66,133,244,0.10);
+            animation: float-box 3.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes float-box {
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.012); }
+            100% { transform: translateY(0px) scale(1); }
+        }
+    </style>
+    </head>
+<body>
+    <div class="container">
+    <img class="bot-icon" src="https://raw.githubusercontent.com/gurraoptimus/SecureBot/refs/heads/gh-page/assets/securebot-logo.svg" alt="SecureBot Logo">
+    <h1 id="typewriter"></h1>
+    <p>What do you want to search for?</p>
+    <script>
+    const texts = ["SecureBot", "Quick Search", "Chrome Extension"];
+    let i = 0, j = 0, isDeleting = false, current = "", typeSpeed = 180, backSpeed = 90;
+
+    function typeWriter() {
+        const h1 = document.getElementById("typewriter");
+        if (!isDeleting && j <= texts[i].length) {
+            current = texts[i].substring(0, j++);
+            h1.textContent = current;
+            setTimeout(typeWriter, typeSpeed);
+        } else if (isDeleting && j >= 0) {
+            current = texts[i].substring(0, j--);
+            h1.textContent = current;
+            setTimeout(typeWriter, backSpeed);
+        } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) i = (i + 1) % texts.length;
+            setTimeout(typeWriter, 900);
+        }
+    }
+    typeWriter();
+    </script>
+    <p class="desc" id="price">Price: <strong>Unavailable</strong></p>
+        <div class="button-link">
+            <a href="https://chrome.google.com/webstore/detail/your-extension-id" target="_blank">
+            <button type="button">Buy Extension</button>
+            </a>
+        </div>
+        <footer style="margin-top:32px; text-align:center; color:#b0b3c6; font-size:1em; opacity:0.85;">
+            &copy; <span id="year"></span> Gurraoptimus Development. All rights reserved.
+            <a href="https://github.com/gurraoptimus/SecureBot" style="color:#8fa1c7; text-decoration:underline;" target="_blank" rel="noopener">GitHub</a>
+            <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
+        </footer>
+    </div>
+</body>
+</html>
