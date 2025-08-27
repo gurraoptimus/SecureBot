@@ -4,7 +4,7 @@
 
 <div align="center">
 
-# SecureBot Quick Search Chrome Extension
+<span style="font-size:1.5em; font-weight:bold; color:#222;">SecureBot Quick Search Chrome Extension</span>
 ### <span style="font-size:1.1em; color:#222;">Automate and Enhance Your Google Searches</span>
 
 ---
