@@ -147,7 +147,7 @@
     <animate attributeName="fill" values="#1C2A4A;#4285f4;#27AE60;#1C2A4A" dur="2.5s" repeatCount="indefinite"/>
 </text>
 </svg>
-<div class="desc">Your helpful browser bot is ready!</div>
+<div class="desc" id="typewriter-desc"></div>
 <form id="search-form" style="display: flex; justify-content: center; margin-bottom: 10px;">
     <input type="text" id="search-input" placeholder="Search browser..." style="padding:7px 10px; border-radius:4px; border:1px solid #ccc; width:70%; font-size:1em;">
     <button type="submit" style="display: flex; align-items: center; gap: 6px;">
@@ -158,8 +158,6 @@
         <span>Search</span>
     </button>
 </form>
-<div id="results"></div>
-<span id="statusMessage" style="color: #fff; margin-left: 10px;"></span>
-<script src="src/popup.js"></script>
+<script src="/src/popup.js"></script>
 </body>
 </html>
